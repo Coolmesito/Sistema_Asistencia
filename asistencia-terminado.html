@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema | Asistencia</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header" >
+                        <div class="dropdown profile-element">
+                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">Marlo Samaniego Calderon</span>
+                                <span class="text-muted text-xs block">Administrador <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                        </div>
+                    </li>
+                    <li class="" >
+                        <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Inicio</span></a>
+                    </li>
+                    <li>
+                        <a href="usuarios.html"><i class="fa fa-user-circle" style="color: white;"></i> <span class="nav-label" style="color: white;">Usuarios</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-calendar-o"></i> <span class="nav-label">Horarios</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="horario-presencial.html">Horario Presencial</a></li>
+                            <li><a href="horario-virtual.html">Horario Virtual</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="asistencia-areas.html"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Asistencia </span><span class="label label-warning float-right">16/24</span></a>
+                    </li>
+                    <li>
+                        <a href="colaboradores.html"><i class="fa fa-group"></i> <span class="nav-label">Colaboradores</span></a>
+                    </li>
+                    <li>
+                        <a href="reportes.html"><i class="fa fa-files-o"></i> <span class="nav-label">Reportes</span></a>
+                    </li> 
+                    <li>
+                        <a href="areas.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Áreas</span>  </a>
+                    </li> 
+                    <li>
+                        <a href="maquinas.html"><i class="fa fa-laptop" style="color: white;"></i> <span class="nav-label" style="color: white;">Máquinas</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0; background-color: #147889;">
+            <div class="navbar-header">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"  style="color: white;"></i> <span class="label label-primary">4</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="mailbox.html" class="dropdown-item">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> Tiene 4 mensajes.
+                                        <span class="float-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-toggle count-info">
+                        <a href="configuracion.html">
+                            <i class="fa fa-cog" style="color: white;"></i>
+                        </a>                    
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"  style="color: white;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div> 
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <br>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="dashboard.html">Inicio</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="asistencia-areas.html">Áreas para la Asistencia</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="asistencia-meses.html">Meses</a>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2 text-right d-flex align-items-center justify-content-end">
+            <button class="btn btn-success" style="margin-top: 10px; background-color: blue; border-color: blue;" data-toggle="modal" data-target="#modalAgregar">
+                <i class="fa fa-plus"></i> 
+            </button>
+        </div>      
+        <!-- Modal Agregar-->
+        <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #007bff; color: white;">
+                        <h5 class="modal-title" id="modalAgregarLabel">Agregar Asistencia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                            <label for="colaborador"><strong>Colaborador:</strong></label>
+                            <input type="text" class="form-control" id="colaborador" placeholder="Nombre del colaborador">
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="hora_entrada"><strong>Hora de Entrada:</strong></label>
+                            <input type="time" class="form-control" id="hora_entrada">
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="hora_salida"><strong>Hora de Salida:</strong></label>
+                            <input type="time" class="form-control" id="hora_salida" value="00:00">
+                            </div>
+                
+                            <div class="form-group">
+                            <label for="justificacion"><strong>Justificación:</strong></label>
+                            <input type="file" class="form-control-file" id="justificacion">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>                                                         
+    </div>
+    <!--TODO--> 
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInDown">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <div class="container">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading text-center">
+                                        <h2><strong>Asistencia del Mes</strong></h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="border rounded p-3 mb-4" style="background-color: #f5f5f5;">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <button class="btn btn-secondary" onclick="cambiarSemana(-1)">&lt;</button>
+                                                <h4 id="tituloSemana" class="m-0 text-center">Semana 1 - Fecha: 13-01-2025 al 17-01-2025</h4>
+                                                <button class="btn btn-secondary" onclick="cambiarSemana(1)">&gt;</button>
+                                            </div>
+                                        </div>
+                                        <div class="tabs-container">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#tab-1">Lunes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tab-2">Martes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tab-3">Miércoles</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tab-4">Jueves</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tab-5">Viernes</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id="tab-1" class="tab-pane active">
+                                                    <div class="panel-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-hover dataTables-asistencia">
+                                                                <thead>
+                                                                    <tr style="background-color: #073952; color: white;">
+                                                                        <th>ID</th>
+                                                                        <th>Colaborador</th>
+                                                                        <th>Fecha</th>
+                                                                        <th>H. Entrada</th>
+                                                                        <th>H. Salida</th>
+                                                                        <th>Estado</th>
+                                                                        <th>Acciones</th>
+                                                                        <th>Justificacion</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="contenidoTabla">
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Marlo Samaniego</td>
+                                                                        <td>13-01-2025</td>
+                                                                        <td>14:00</td>
+                                                                        <td>18:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Xiomara Ramirez</td>
+                                                                        <td>13-01-2025</td>
+                                                                        <td>14:00</td>
+                                                                        <td>18:00</td>
+                                                                        <td>
+                                                                            <button title="tarde"class="btn btn-warning btn-sm"><i class="fa fa-clock-o"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <a href="ruta/justificacion.pdf" target="_blank" title="Ver justificación">
+                                                                            <i class="fa fa-file-pdf-o text-danger"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Joaquin Alcides</td>
+                                                                        <td>13-01-2025</td>
+                                                                        <td>---</td>
+                                                                        <td>---</td>
+                                                                        <td>
+                                                                            <button title="Falto" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>Daniel Roman</td>
+                                                                        <td>13-01-2025</td>
+                                                                        <td>14:00</td>
+                                                                        <td>18:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>                                    
+                                                </div> 
+                                                 <!-- Tab 2 -->
+                                                 <div id="tab-2" class="tab-pane ">
+                                                    <div class="panel-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-hover dataTables-asistencia">
+                                                                <thead>
+                                                                    <tr style="background-color: #073952; color: white;">
+                                                                        <th>ID</th>
+                                                                        <th>Colaborador</th>
+                                                                        <th>Fecha</th>
+                                                                        <th>H. Entrada</th>
+                                                                        <th>H. Salida</th>
+                                                                        <th>Estado</th>
+                                                                        <th>Acciones</th>
+                                                                        <th>Justificacion</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="contenidoTabla">
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Joaquin Alcides</td>
+                                                                        <td>14-01-2025</td>
+                                                                        <td>---</td>
+                                                                        <td>---</td>
+                                                                        <td>
+                                                                            <button title="Falto" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <a href="ruta/justificacion.pdf" target="_blank" title="Ver justificación">
+                                                                            <i class="fa fa-file-pdf-o text-danger"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Marlo Samaniego</td>
+                                                                        <td>14-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Daniel Roman</td>
+                                                                        <td>14-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>Xiomara Ramirez</td>
+                                                                        <td>14-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>                                    
+                                                </div> 
+                                                <!-- Tab 3 -->
+                                                <div id="tab-3" class="tab-pane ">
+                                                    <div class="panel-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-hover dataTables-asistencia">
+                                                                <thead>
+                                                                    <tr style="background-color: #073952; color: white;">
+                                                                        <th>ID</th>
+                                                                        <th>Colaborador</th>
+                                                                        <th>Fecha</th>
+                                                                        <th>H. Entrada</th>
+                                                                        <th>H. Salida</th>
+                                                                        <th>Estado</th>
+                                                                        <th>Acciones</th>
+                                                                        <th>Justificacion</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody >
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Xiomara Ramirez</td>
+                                                                        <td>15-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Joaquin Alcides</td>
+                                                                        <td>15-01-2025</td>
+                                                                        <td>---</td>
+                                                                        <td>---</td>
+                                                                        <td>
+                                                                            <button title="Falto" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <a href="ruta/justificacion.pdf" target="_blank" title="Ver justificación">
+                                                                            <i class="fa fa-file-pdf-o text-danger"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Marlo Samaniego</td>
+                                                                        <td>15-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>Daniel Roman</td>
+                                                                        <td>15-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>                                    
+                                                </div> 
+                                                <!-- Tab 4 -->
+                                                <div id="tab-4" class="tab-pane ">
+                                                    <div class="panel-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-hover dataTables-asistencia">
+                                                                <thead>
+                                                                    <tr style="background-color: #073952; color: white;">
+                                                                        <th>ID</th>
+                                                                        <th>Colaborador</th>
+                                                                        <th>Fecha</th>
+                                                                        <th>H. Entrada</th>
+                                                                        <th>H. Salida</th>
+                                                                        <th>Estado</th>
+                                                                        <th>Acciones</th>
+                                                                        <th>Justificacion</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody >
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Joaquin Alcides</td>
+                                                                        <td>16-01-2025</td>
+                                                                        <td>---</td>
+                                                                        <td>---</td>
+                                                                        <td>
+                                                                            <button title="Falto" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <a href="ruta/justificacion.pdf" target="_blank" title="Ver justificación">
+                                                                            <i class="fa fa-file-pdf-o text-danger"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Marlo Samaniego</td>
+                                                                        <td>16-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Daniel Roman</td>
+                                                                        <td>16-01-2025</td>
+                                                                        <td>---</td>
+                                                                        <td>---</td>
+                                                                        <td>
+                                                                            <button title="Falto" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <a href="ruta/justificacion.pdf" target="_blank" title="Ver justificación">
+                                                                            <i class="fa fa-file-pdf-o text-danger"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>Xiomara Ramirez</td>
+                                                                        <td>14-01-2025</td>
+                                                                        <td>08:00</td>
+                                                                        <td>12:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>                                    
+                                                </div> 
+                                                <!-- Tab 5 -->
+                                                <div id="tab-5" class="tab-pane">
+                                                    <div class="panel-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-hover dataTables-asistencia">
+                                                                <thead>
+                                                                    <tr style="background-color: #073952; color: white;">
+                                                                        <th>ID</th>
+                                                                        <th>Colaborador</th>
+                                                                        <th>Fecha</th>
+                                                                        <th>H. Entrada</th>
+                                                                        <th>H. Salida</th>
+                                                                        <th>Estado</th>
+                                                                        <th>Acciones</th>
+                                                                        <th>Justificacion</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Daniel Roman</td>
+                                                                        <td>17-01-2025</td>
+                                                                        <td>14:00</td>
+                                                                        <td>18:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Marlo Samaniego</td>
+                                                                        <td>17-01-2025</td>
+                                                                        <td>14:00</td>
+                                                                        <td>18:00</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Xiomara Ramirez</td>
+                                                                        <td>17-01-2025</td>
+                                                                        <td>14:30</td>
+                                                                        <td>18:00</td>
+                                                                        <td>
+                                                                            <button title="tarde"class="btn btn-warning btn-sm"><i class="fa fa-clock-o"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <a href="ruta/justificacion.pdf" target="_blank" title="Ver justificación">
+                                                                            <i class="fa fa-file-pdf-o text-danger"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>Joaquin Alcides</td>
+                                                                        <td>17-01-2025</td>
+                                                                        <td>---</td>
+                                                                        <td>---</td>
+                                                                        <td>
+                                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                                            <i class="fa fa-check"></i></button>
+                                                                        </td>
+                                                                        <td>
+                                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                                        </td>                                                           
+                                                                        <td class="text-center">
+                                                                            ---
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>                                    
+                                                </div>                                         
+                                            </div> 
+                                        </div>                                    
+                                    </div>                                          
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="float-right">Redes <strong>Sociales</strong> Free.</div>
+                <div><strong>Copyright</strong>  JyP Perifericos &copy; 2025-2030</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!--Modal Editar-->
+ <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #007bff; color: white;">
+          <h5 class="modal-title" id="modalEditarLabel">Editar Asistencia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="editar_colaborador"><strong>Colaborador:</strong></label>
+              <input type="text" class="form-control" id="editar_colaborador" value="Marlo Samaniego">
+            </div>
+            <div class="form-group">
+              <label for="editar_hora_entrada"><strong>Hora de Entrada:</strong></label>
+              <input type="time" class="form-control" id="editar_hora_entrada" value="08:00">
+            </div>
+            <div class="form-group">
+              <label for="editar_hora_salida"><strong>Hora de Salida:</strong></label>
+              <input type="time" class="form-control" id="editar_hora_salida" value="12:00">
+            </div>
+  
+            <div class="form-group">
+              <label for="editar_justificacion"><strong>Justificación:</strong></label>
+              <input type="file" class="form-control-file" id="editar_justificacion">
+              <small class="form-text text-muted">Archivo actual: <a href="#">justificacion_07-01-2025.pdf</a></small>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Flot -->
+<script src="js/plugins/flot/jquery.flot.js"></script>
+<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/plugins/flot/jquery.flot.spline.js"></script>
+<script src="js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="js/plugins/flot/jquery.flot.symbol.js"></script>
+<script src="js/plugins/flot/jquery.flot.time.js"></script>
+
+<!-- Peity -->
+<script src="js/plugins/peity/jquery.peity.min.js"></script>
+<script src="js/demo/peity-demo.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+
+<script src="js/plugins/dataTables/datatables.min.js"></script>
+<script src="js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
+<script src="js/plugins/fullcalendar/moment.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>-->
+
+
+<style>
+    /* OCULTANDO LO DE ORGANIZAR*/
+        /* Ver (números) */
+        div.dataTables_length {
+            display: none;
+        }
+
+        /* El Buscar */
+        div.dataTables_filter {
+            display: none;
+        }
+        div.dt-buttons {
+            display: flex;
+            gap: 5px;
+            justify-content: flex-start;
+            margin-bottom: 15px; 
+        }
+
+    /* LAYOUT*/
+    /* Menú lateral */
+    .navbar-static-side {
+        background-color: #0F172A; /* Azul más oscuro */
+    }
+    /* Enlaces del menú */
+    .nav > li > a {
+        color: #CBD5E1; /* Color de texto */
+        padding: 15px 20px;
+        display: block;
+    }
+    /* Submenús */
+    .nav ul {
+        background-color: #0F172A !important; /* Mantiene el color de fondo de submenús */
+        padding-left: 0;
+    }
+    /* Mantiene el color del submenú, excepto para el Administrador */
+    .nav ul {
+        background-color: #0F172A !important; /* Azul oscuro */
+        padding-left: 0;
+    }
+    /* Excepción: No aplica al ul dentro del perfil del Administrador */
+    .nav-header ul {
+        background-color: white !important;
+    }
+
+/* Excepción: No aplica al dropdown de notificaciones */
+.dropdown-menu.dropdown-alerts {
+    background-color: white !important; /* Fondo blanco */
+    color: black !important;
+    border: 1px solid #ddd; /* Opcional: Borde sutil */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+}
+
+/* Ajusta los ítems dentro del dropdown */
+.dropdown-menu.dropdown-alerts li a {
+    color: black !important;
+}
+
+/* Cambia el hover dentro del dropdown */
+.dropdown-menu.dropdown-alerts li a:hover {
+    background-color: #f8f9fa !important; /* Un gris claro en hover */
+}
+</style>
+
+<script>
+    $(document).ready(function(){
+        table1 = $('.dataTables-asistencia').DataTable({
+            pageLength: 12,
+            responsive: true,
+            dom: '<"html5buttons"B>lTfgitp',
+            buttons: [
+                { extend: 'copy'},
+                {extend: 'csv'},
+                {extend: 'excel', title: 'ExampleFile'},
+                {extend: 'pdf', title: 'ExampleFile'},
+
+                {extend: 'print',
+                 customize: function (win){
+                        $(win.document.body).addClass('white-bg');
+                        $(win.document.body).css('font-size', '10px');
+
+                        $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                }
+                }
+            ]
+
+        });
+    });
+
+    let semanaActual = 1;
+
+    const semanas = {
+        1: {
+            titulo: "Semana 1 - Fecha: 13-01-2025 al 17-01-2025",
+            contenido: `
+                <tr>
+                    <td>1</td>
+                    <td>Marlo Samaniego</td>
+                    <td>13-01-2025</td>
+                    <td>14:00</td>
+                    <td>18:00</td>
+                    <td>
+                        <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit" data-toggle="modal" data-target="#modalEditar"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td class="text-center">---</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Xiomara Ramirez</td>
+                    <td>13-01-2025</td>
+                    <td>14:00</td>
+                    <td>18:00</td>
+                    <td>
+                        <button title="Tarde" class="btn btn-warning btn-sm"><i class="fa fa-clock-o"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td class="text-center">
+                        <a href="ruta/justificacion.pdf" target="_blank" title="Ver justificación">
+                            <i class="fa fa-file-pdf-o text-danger"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Joaquin Alcides</td>
+                    <td>13-01-2025</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>
+                        <button title="Faltó" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;">
+                            <i class="fa fa-times-circle"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td class="text-center">---</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Daniel Roman</td>
+                    <td>13-01-2025</td>
+                    <td>14:00</td>
+                    <td>18:00</td>
+                    <td>
+                        <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td class="text-center">---</td>
+                </tr>
+
+            `
+        },
+        2: {
+            titulo: "Semana 2 - Fecha: 20-01-2025 al 24-01-2025",
+            contenido: `
+                <tr>
+                    <td>1</td><td>Marlo Samaniego</td><td>20-01-2025</td><td>14:15</td><td>18:00</td>
+                    <td><button class="btn btn-warning btn-sm"><i class="fa fa-clock-o"></i></button></td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                    </td>
+                    <td class="text-center">
+                        <a href="ruta/justificacion2.pdf" target="_blank"><i class="fa fa-file-pdf-o text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td><td>Daniel Roman</td><td>20-01-2025</td><td>---</td><td>---</td>
+                    <td><button class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button></td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                    </td>
+                    <td class="text-center">---</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Joaquin Alcides</td>
+                    <td>20-01-2025</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>
+                        <button title="Falto" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td class="text-center">
+                    ---
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Xiomara Ramirez</td>
+                    <td>20-01-2025</td>
+                    <td>14:11</td>
+                    <td>18:15</td>
+                    <td>
+                        <button title="Temprano" class="btn btn-info btn-sm" style="background-color: green; border-color: green;"><i class="fa fa-check"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td class="text-center">
+                    ---
+                    </td>
+                </tr>
+            `
+        },
+        3: {
+            titulo: "Semana 3 - Fecha: 27-01-2025 al 30-01-2025",
+            contenido: `
+                 <tr>
+                                                        <td>1</td>
+                                                        <td>Joaquin Alcides</td>
+                                                        <td>27-01-2025</td>
+                                                        <td>---</td>
+                                                        <td>---</td>
+                                                        <td>
+                                                            <button title="Falto" class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            ---
+                                                        </td>
+                                                    </tr>
+                <tr>
+                    <td>2</td><td>Marlo Samaniego</td><td>27-01-2025</td><td>14:15</td><td>18:00</td>
+                    <td><button class="btn btn-warning btn-sm"><i class="fa fa-clock-o"></i></button></td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                    </td>
+                    <td class="text-center">
+                        <a href="ruta/justificacion2.pdf" target="_blank"><i class="fa fa-file-pdf-o text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td><td>Daniel Roman</td><td>27-01-2025</td><td>---</td><td>---</td>
+                    <td><button class="btn btn-danger btn-sm" style="background-color: red; border-color: red;"><i class="fa fa-times-circle"></i></button></td>
+                    <td>
+                        <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                    </td>
+                    <td class="text-center">---</td>
+                </tr>
+                 <tr>
+                                                        <td>4</td>
+                                                        <td>Xiomara Ramirez</td>
+                                                        <td>27-01-2025</td>
+                                                         <td>14:00</td>
+                                                        <td>18:00</td>
+                                                        <td>
+                                                            <button title="Temprano" class="btn btn-primary btn-sm" style="background-color: green; border-color: green;">
+                                                            <i class="fa fa-check"></i></button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button>
+                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                        </td>                                                           
+                                                        <td class="text-center">
+                                                            ---
+                                                        </td>
+                                                    </tr>
+            `
+        }
+    };
+
+    function cambiarSemana(direccion) {
+        semanaActual += direccion;
+        if (semanaActual < 1) semanaActual = 1;
+        if (semanaActual > Object.keys(semanas).length) semanaActual = Object.keys(semanas).length;
+
+        document.getElementById("tituloSemana").innerText = semanas[semanaActual].titulo;
+        document.getElementById("contenidoTabla").innerHTML = semanas[semanaActual].contenido;
+    }
+</script>

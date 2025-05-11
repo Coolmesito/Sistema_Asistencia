@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema | Asistencia</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header" >
+                        <div class="dropdown profile-element">
+                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">Marlo Samaniego Calderon</span>
+                                <span class="text-muted text-xs block">Administrador <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                        </div>
+                    </li>
+                    <li class="" >
+                        <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Inicio</span></a>
+                    </li>
+                    <li>
+                        <a href="usuarios.html"><i class="fa fa-user-circle" style="color: white;"></i> <span class="nav-label" style="color: white;">Usuarios</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-calendar-o"></i> <span class="nav-label">Horarios</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="horario-presencial.html">Horario Presencial</a></li>
+                            <li><a href="horario-virtual.html">Horario Virtual</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="asistencia-areas.html"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Asistencia </span><span class="label label-warning float-right">16/24</span></a>
+                    </li>
+                    <li>
+                        <a href="colaboradores.html"><i class="fa fa-group"></i> <span class="nav-label">Colaboradores</span></a>
+                    </li>
+                    <li>
+                        <a href="reportes.html"><i class="fa fa-files-o"></i> <span class="nav-label">Reportes</span></a>
+                    </li> 
+                    <li>
+                        <a href="areas.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Áreas</span>  </a>
+                    </li> 
+                    <li>
+                        <a href="maquinas.html"><i class="fa fa-laptop" style="color: white;"></i> <span class="nav-label" style="color: white;">Máquinas</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0; background-color: #147889;">
+            <div class="navbar-header">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"  style="color: white;"></i> <span class="label label-primary">4</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="mailbox.html" class="dropdown-item">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> Tiene 4 mensajes.
+                                        <span class="float-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-toggle count-info">
+                        <a href="configuracion.html">
+                            <i class="fa fa-cog" style="color: white;"></i>
+                        </a>                    
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"  style="color: white;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>    
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-12">
+            <br>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="dashboard.html">Inicio</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="asistencia-areas.html">Áreas para la Asistencia</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="wrapper wrapper-content animated fadeInDown">
+        <div class="container">
+            <!-- Fila 1 -->
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/001.svg">
+                        <h3 class="m-b-xs"><strong>Programación</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Desarrollo de software y soluciones tecnológicas.<br><br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="asistencia-meses.html" class="btn btn-xs btn-success">
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/007.svg">
+                        <h3 class="m-b-xs"><strong>IA</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Implementación de algoritmos inteligentes y modelos predictivos.<br><br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="#" class="btn btn-xs btn-success">
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/005.svg">
+                        <h3 class="m-b-xs"><strong>Soporte</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Resolución de problemas técnicos y atención a usuarios.<br><br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="#" class="btn btn-xs btn-success">
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/004.svg">
+                        <h3 class="m-b-xs"><strong>Diseño</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Creación de interfaces, experiencias gráficas y diseño visual.<br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="#" class="btn btn-xs btn-success">
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4"><!-- Fila 2 -->
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/003.svg">
+                        <h3 class="m-b-xs"><strong>Administración</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Gestión de recursos, coordinación de actividades y toma de decisiones estratégicas.<br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="#" class="btn btn-xs btn-success">
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/002.svg">
+                        <h3 class="m-b-xs"><strong>Analisis</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Evaluación de datos y métricas para toma de decisiones.<br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="#" class="btn btn-xs btn-success">
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/009.svg">
+                        <h3 class="m-b-xs"><strong>Videojuegos</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Desarrollo de videojuegos y experiencias interactivas.<br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="#" class="btn btn-xs btn-success">>
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="contact-box text-center">
+                        <img alt="image" class="rounded-circle" src="svg/006.svg">
+                        <h3 class="m-b-xs"><strong>Android</strong></h3>
+                        <address class="m-t-md">
+                            <strong>Descripción:</strong><br>
+                            Desarrollo de apps móviles para dispositivos Android.<br>
+                        </address>
+                        <div class="contact-box-footer">
+                            <div class="m-t-xs btn-group">
+                                <a href="#" class="btn btn-xs btn-success">
+                                    <i class="fa fa-user-plus"></i> Asistencia
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">  <!-- Fila 3 -->
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-3">
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="footer">
+            <div class="float-right">Redes <strong>Sociales</strong> Free.</div>
+            <div><strong>Copyright</strong>  JyP Perifericos &copy; 2025-2030</div>
+        </div>
+    </div>
+</div>
+<style>
+    /* LAYOUT*/
+    /* Menú lateral */
+    .navbar-static-side {
+        background-color: #0F172A; /* Azul más oscuro */
+    }
+    /* Enlaces del menú */
+    .nav > li > a {
+        color: #CBD5E1; /* Color de texto */
+        padding: 15px 20px;
+        display: block;
+    }
+    /* Submenús */
+    .nav ul {
+        background-color: #0F172A !important; /* Mantiene el color de fondo de submenús */
+        padding-left: 0;
+    }
+    /* Mantiene el color del submenú, excepto para el Administrador */
+    .nav ul {
+        background-color: #0F172A !important; /* Azul oscuro */
+        padding-left: 0;
+    }
+    /* Excepción: No aplica al ul dentro del perfil del Administrador */
+    .nav-header ul {
+        background-color: white !important;
+    }
+    /* Excepción: No aplica al dropdown de notificaciones */
+    .dropdown-menu.dropdown-alerts {
+        background-color: white !important; /* Fondo blanco */
+        color: black !important;
+        border: 1px solid #ddd; /* Opcional: Borde sutil */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+    }
+    
+    /* Ajusta los ítems dentro del dropdown */
+    .dropdown-menu.dropdown-alerts li a {
+        color: black !important;
+    }
+    
+    /* Cambia el hover dentro del dropdown */
+    .dropdown-menu.dropdown-alerts li a:hover {
+        background-color: #f8f9fa !important; /* Un gris claro en hover */
+    }
+    .contact-box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .equal-height-row > [class*='col-'] {
+            display: flex;
+        }
+
+        .contact-box img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 15px;
+        }
+
+        .contact-box h4 {
+            margin-bottom: 10px;
+        }
+
+        .contact-box address {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box-footer {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .btn-xs {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        body {
+            background-color: #f6f8fa;
+        }
+
+        .wrapper-content {
+            padding: 30px 0;
+        }
+</style>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+</body>
+</html>

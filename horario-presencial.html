@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema | Horario - General</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <link href="css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="css/plugins/fullcalendar/fullcalendar.print.css" rel='stylesheet' media='print'>
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header" >
+                        <div class="dropdown profile-element">
+                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">Marlo Samaniego Calderon</span>
+                                <span class="text-muted text-xs block">Administrador <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg"/>
+                        </div>
+                    </li>
+                    <li class="" >
+                        <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Inicio</span></a>
+                    </li>
+                    <li>
+                        <a href="usuarios.html"><i class="fa fa-user-circle" style="color: white;"></i> <span class="nav-label" style="color: white;">Usuarios</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-calendar-o"></i> <span class="nav-label">Horarios</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="horario-presencial.html">Horario Presencial</a></li>
+                            <li><a href="horario-virtual.html">Horario Virtual</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="asistencia-areas.html"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Asistencia </span><span class="label label-warning float-right">16/24</span></a>
+                    </li>
+                    <li>
+                        <a href="colaboradores.html"><i class="fa fa-group"></i> <span class="nav-label">Colaboradores</span></a>
+                    </li>
+                    <li>
+                        <a href="reportes.html"><i class="fa fa-files-o"></i> <span class="nav-label">Reportes</span></a>
+                    </li> 
+                    <li>
+                        <a href="areas.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Áreas</span>  </a>
+                    </li> 
+                    <li>
+                        <a href="maquinas.html"><i class="fa fa-laptop" style="color: white;"></i> <span class="nav-label" style="color: white;">Máquinas</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0; background-color: #147889;">
+            <div class="navbar-header">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"  style="color: white;"></i> <span class="label label-primary">4</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="mailbox.html" class="dropdown-item">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> Tiene 4 mensajes.
+                                        <span class="float-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-toggle count-info">
+                        <a href="configuracion.html">
+                            <i class="fa fa-cog" style="color: white;"></i>
+                        </a>                    
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"  style="color: white;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div> 
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-12">
+            <br>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="dashboard.html">Inicio</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="horario-presencial.html">Horario Presencial</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInDown">
+            <div class="col-lg-12 mb-3">  <!-- Leyenda -->
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Leyenda de Áreas</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="d-flex flex-wrap align-items-center gap-3">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #19CB29;"></span> IA
+                            </div>
+                            <div class="legend-item"><span></span></div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #1F76F8;"></span> Análisis
+                            </div>
+                            <div class="legend-item"><span></span></div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #E5835A;"></span> Android
+                            </div>
+                            <div class="legend-item"><span></span></div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #9629F1;"></span> Programación
+                            </div>
+                            <div class="legend-item"><span></span></div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #074212;"></span> Soporte
+                            </div>
+                            <div class="legend-item"><span></span></div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #FFD700;"></span> Diseño
+                            </div>
+                            <div class="legend-item"><span></span></div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #FF4500;"></span> VideoJuegos
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title position-relative">
+                        <h5 class="mb-0">Horario Presencial</h5>
+                        <button class="btn btn-success btn-sm position-absolute"
+                                style="top: 0; right: 0; background-color: blue; border-color: blue; margin: 10px;"
+                                data-toggle="modal" data-target="#modalAgregarHorario">
+                            <i class="fa fa-plus"></i> 
+                        </button>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalAgregarHorario" tabindex="-1" role="dialog" aria-labelledby="modalAgregarHorarioLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #007bff; color: white;">
+                <h5 class="modal-title" id="modalAgregarAreaLabel">Agregar Horario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"> <!--Formulario-->
+            <form>
+              <div class="form-group">
+                <label><strong>Área:</strong></label>
+                <input type="text" class="form-control" placeholder="Ej: Android">
+              </div>
+              <div class="form-group">
+                <label><strong>Fecha:</strong></label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label><strong>Hora Inicio:</strong></label>
+                <input type="time" class="form-control">
+              </div>
+              <div class="form-group">
+                <label><strong>Hora Final:</strong></label>
+                <input type="time" class="form-control">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-success">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="footer">
+            <div class="float-right">Redes <strong>Sociales</strong> Free.</div>
+            <div><strong>Copyright</strong>  JyP Perifericos &copy; 2025-2030</div>
+        </div>
+    </div>
+</div>
+<style>
+    .fc-event {
+        text-align: center;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fc-day-header {
+        display: none !important;
+    }
+    .receso{
+        font-size: 20px;
+        font-weight:400;
+    }
+    .fc-title {
+        font-size: 12px; /* Ajusta el tamaño de la fuente aquí */
+        white-space: normal; /* Permite el salto de línea dentro del evento */
+        line-height: 1.4; /* Ajusta el espacio entre líneas */
+    }
+    /* LAYOUT*/
+    /* Menú lateral */
+    .navbar-static-side {
+        background-color: #0F172A; /* Azul más oscuro */
+    }
+    /* Enlaces del menú */
+    .nav > li > a {
+        color: #CBD5E1; /* Color de texto */
+        padding: 15px 20px;
+        display: block;
+    }
+    /* Submenús */
+    .nav ul {
+        background-color: #0F172A !important; /* Mantiene el color de fondo de submenús */
+        padding-left: 0;
+    }
+    /* Mantiene el color del submenú, excepto para el Administrador */
+    .nav ul {
+        background-color: #0F172A !important; /* Azul oscuro */
+        padding-left: 0;
+    }
+    /* Excepción: No aplica al ul dentro del perfil del Administrador */
+    .nav-header ul {
+        background-color: white !important;
+    }
+
+    /* Excepción: No aplica al dropdown de notificaciones */
+    .dropdown-menu.dropdown-alerts {
+        background-color: white !important; /* Fondo blanco */
+        color: black !important;
+        border: 1px solid #ddd; /* Opcional: Borde sutil */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+    }
+    
+    /* Ajusta los ítems dentro del dropdown */
+    .dropdown-menu.dropdown-alerts li a {
+        color: black !important;
+    }
+    
+    /* Cambia el hover dentro del dropdown */
+    .dropdown-menu.dropdown-alerts li a:hover {
+        background-color: #f8f9fa !important; /* Un gris claro en hover */
+    }
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* espacio entre leyendas */
+    font-size: 14px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+.fc-toolbar {
+    display: none !important;
+}
+</style>
+
+<!-- Mainly scripts -->
+<script src="js/plugins/fullcalendar/moment.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- jQuery UI  -->
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- iCheck -->
+<script src="js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- Full Calendar -->
+<script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+<script src='locales/es.js'></script>
+
+<script>
+    $(document).ready(function () {
+        $('#external-events div.external-event').each(function () {
+            $(this).data('event', {
+                title: $.trim($(this).text()),
+                stick: true
+            });
+            $(this).draggable({
+                zIndex: 1111999,
+                revert: true,
+                revertDuration: 0
+            });
+        });
+
+        // Obtener el lunes de la semana actual
+        var today = new Date();
+        var day = today.getDay(); // 0 = domingo, 1 = lunes, etc.
+        var diffToMonday = today.getDate() - day + (day === 0 ? -6 : 1); // ajustar si es domingo
+        var startOfWeek = new Date(today.setDate(diffToMonday));
+        var y = startOfWeek.getFullYear();
+        var m = startOfWeek.getMonth();
+        var d = startOfWeek.getDate();
+
+        $('#calendar').fullCalendar({
+            locale: 'es',
+            header: {
+                left: '',
+                center: '',
+                right: ''
+            },
+            allDayText: 'Hora/Día',
+            defaultView: 'agendaWeek',
+            defaultDate: new Date(y, m, d), // establece el lunes como día base
+            firstDay: 1,
+            contentHeight: 'auto',
+            editable: true,
+            droppable: true,
+            eventOverlap: true,
+            slotEventOverlap: false,
+            allDaySlot: true,
+            minTime: "08:00:00",
+            maxTime: "18:30:00",
+            drop: function () {
+                if ($('#drop-remove').is(':checked')) {
+                    $(this).remove();
+                }
+            },
+            events: [
+                {
+                    title: 'Lunes',
+                    start: new Date(y, m, d, 9, 0),
+                    end: new Date(y, m, d, 13, 30),
+                    allDay: true,
+                    color: '#1ab394',
+                    editable: false
+                },
+                {
+                    title: 'Martes',
+                    start: new Date(y, m, d + 1, 9, 0),
+                    end: new Date(y, m, d + 1, 13, 30),
+                    allDay: true,
+                    color: '#1ab394',
+                    editable: false
+                },
+                {
+                    title: 'Miércoles',
+                    start: new Date(y, m, d + 2, 9, 0),
+                    end: new Date(y, m, d + 2, 13, 30),
+                    allDay: true,
+                    color: '#1ab394',
+                    editable: false
+                },
+                {
+                    title: 'Jueves',
+                    start: new Date(y, m, d + 3, 9, 0),
+                    end: new Date(y, m, d + 3, 13, 30),
+                    allDay: true,
+                    color: '#1ab394',
+                    editable: false
+                },
+                {
+                    title: 'Viernes',
+                    start: new Date(y, m, d + 4, 9, 0),
+                    end: new Date(y, m, d + 4, 13, 30),
+                    allDay: true,
+                    color: '#1ab394',
+                    editable: false
+                },
+                {
+                    title: 'Sábado',
+                    start: new Date(y, m, d + 5, 9, 0),
+                    end: new Date(y, m, d + 5, 13, 30),
+                    allDay: true,
+                    color: '#1ab394',
+                    editable: false
+                },
+                {
+                    title: 'Domingo',
+                    start: new Date(y, m, d + 6, 9, 0),
+                    end: new Date(y, m, d + 6, 13, 30),
+                    allDay: true,
+                    color: '#1ab394',
+                    editable: false
+                }, 
+                //Areas y colaboradores
+                {
+                    title: 'Gabriel<br>Yako<br>Veronica',
+                    start: new Date(y, m, d, 8, 30),
+                    end: new Date(y, m, d, 12, 30),
+                    color: '#19CB29'
+                },
+                {
+                    title: 'Juan<br>Carlos<br>Laime',
+                    start: new Date(y, m, d, 8, 30),
+                    end: new Date(y, m, d, 12, 30),
+                    color: '#FF4500'
+                },
+                {
+                    title: 'Marlo<br>Xiomara<br>Joaquin<br>Daniel',
+                    start: new Date(y, m, d ,14),
+                    end: new Date(y, m, d , 17, 30),
+                    color: '#9629F1'
+                },
+                {
+                    title: 'Flavia<br>Gaby<br>Gino',
+                    start: new Date(y, m, d + 1, 7, 30),
+                    end: new Date(y, m, d + 1, 12, 30),
+                    color: '#1F76F8'
+                },
+                {
+                    title: 'Juan<br>Carlos<br>Laime',
+                    start: new Date(y, m, d + 1, 14),
+                    end: new Date(y, m, d + 1, 18, 30),
+                    color: '#FF4500'
+                },
+                {
+                    title: 'Josue<br>Ramon<br>Brissila',
+                    start: new Date(y, m, d + 1, 8, 30),
+                    end: new Date(y, m, d + 1, 12, 30),
+                    color: '#FFD700'
+                },
+                {
+                    title: 'Fabian<br>Claudio<br>Rodrigo',
+                    start: new Date(y, m, d + 2, 8, 20),
+                    end: new Date(y, m, d + 2, 12, 30),
+                    color: '#074212'
+                },
+                {
+                    title: 'Flavia<br>Rodrigo',
+                    start: new Date(y, m, d + 2, 14),
+                    end: new Date(y, m, d + 2, 18, 30),
+                    color: '#1F76F8'
+                },
+                {
+                    title: 'Josue<br>Ramon<br>Brissila',
+                    start: new Date(y, m, d + 3, 8, 30),
+                    end: new Date(y, m, d + 3, 12, 30),
+                    color: '#FFD700'
+                },
+                {
+                    title: 'Gabriel<br>Yako<br>Veronica',
+                    start: new Date(y, m, d + 3, 14),
+                    end: new Date(y, m, d + 3, 18, 30),
+                    color: '#19CB29'
+                },
+                {
+                    title: 'Gustavo<br>Antonio<br>Brisila<br>Oscar',
+                    start: new Date(y, m, d + 4, 9),
+                    end: new Date(y, m, d + 4, 12, 30),
+                    color: '#E5835A'
+                },
+                {
+                    title: 'Marlo<br>Xiomara<br>Joaquin<br>Daniel',
+                    start: new Date(y, m, d + 4, 14),
+                    end: new Date(y, m, d + 4, 18, 30),
+                    color: '#9629F1'
+                },
+                {
+                    title: 'Gustavo<br>Antonio<br>Brisila<br>Oscar',
+                    start: new Date(y, m, d + 5, 8, 30),
+                    end: new Date(y, m, d + 5, 12, 30),
+                    color: '#E5835A'
+                },
+                {
+                    title: 'Fabian<br>Claudio<br>Rodrigo',
+                    start: new Date(y, m, d + 5, 8, 30),
+                    end: new Date(y, m, d + 5, 12, 30),
+                    color: '#074212'
+                },
+                // Eventos de receso
+                {   
+                    title: 'R',
+                    start: new Date(y, m, d, 12, 30),
+                    end: new Date(y, m, d, 14),
+                    color: '#B6B937'
+                },
+                {
+                    title: 'E',
+                    start: new Date(y, m, d + 1, 12, 30),
+                    end: new Date(y, m, d + 1, 14),
+                    color: '#B6B937'
+                },
+                {
+                    title: 'C',
+                    start: new Date(y, m, d + 2, 12, 30),
+                    end: new Date(y, m, d + 2, 14),
+                    color: '#B6B937'
+                },
+                {
+                    title: 'E',
+                    start: new Date(y, m, d + 3, 12, 30),
+                    end: new Date(y, m, d + 3, 14),
+                    color: '#B6B937'
+                },
+                {   
+                    title: 'S',
+                    start: new Date(y, m, d + 4, 12, 30),
+                    end: new Date(y, m, d + 4, 14),
+                    color: '#B6B937'
+                },
+                {   
+                    title: 'O',
+                    start: new Date(y, m, d + 5, 12, 30),
+                    end: new Date(y, m, d + 5, 14),
+                    color: '#B6B937'
+                }
+            ],
+            eventRender: function(event, element) {
+                // Eliminar la hora del evento
+                $(element).find('.fc-time').remove();
+
+                // Permitir saltos de línea con <br>
+                element.find('.fc-title').html(event.title);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
